@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 
 function NavList() {
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-4">
       <Typography
         as="li"
         variant="lead"
@@ -22,7 +22,7 @@ function NavList() {
           className={({ isActive, isPending }) =>
             `${
               isActive
-                ? "text-yellow-700 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
+                ? "text-yellow-700 bg-gray-100 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
                 : ""
             } ${isPending ? "text-red-700" : ""}`
           }
@@ -41,7 +41,7 @@ function NavList() {
           className={({ isActive, isPending }) =>
             `${
               isActive
-                ? "text-yellow-700 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
+                ? "text-yellow-700 bg-gray-100 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
                 : ""
             } ${isPending ? "text-red-700" : ""}`
           }
@@ -60,7 +60,7 @@ function NavList() {
           className={({ isActive, isPending }) =>
             `${
               isActive
-                ? "text-yellow-700 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
+                ? "text-yellow-700 bg-gray-100 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
                 : ""
             } ${isPending ? "text-red-700" : ""}`
           }
@@ -68,7 +68,7 @@ function NavList() {
           Pages to Read
         </NavLink>
       </Typography>
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="lg:hidden flex items-center gap-4 flex-wrap">
         <button
           rel="noopener noreferrer"
           className="px-4 py-2 md:px-6 md:py-3 font-semibold text-sm md:text-base rounded-lg bg-yellow-700 text-white"
@@ -101,7 +101,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <Navbar className="shadow-none mx-auto bg-[#FFFFFFF2] opacity-90">
+    <Navbar className="shadow-none mx-auto bg-gray-200 border-none">
       <div className="flex items-center justify-between">
         <Typography
           as="h1"
@@ -127,6 +127,20 @@ const Nav = () => {
             />
           )}
         </IconButton>
+        <div className="hidden lg:flex items-center gap-4 flex-wrap">
+          <button
+            rel="noopener noreferrer"
+            className="lg:px-6 lg:py-3 font-semibold lg:text-base rounded-lg bg-yellow-700 text-white"
+          >
+            Sign In
+          </button>
+          <button
+            rel="noopener noreferrer"
+            className="lg:px-6 lg:py-3 font-semibold lg:text-base rounded-lg bg-blue-900 text-white"
+          >
+            Sign Up
+          </button>
+        </div>
       </div>
       <Collapse open={openNav}>
         <NavList />
