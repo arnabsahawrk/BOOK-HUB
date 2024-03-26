@@ -1,12 +1,14 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import ListedBooksPage from "../components/ListedBooksPage/ListedBooksPage";
 import { getStorage, removeStorage } from "../utils/localStorage";
+import { ReadBooksContext } from "../layouts/Root";
 
 export const ListedBooksContext = createContext([]);
 
 const ListedBooks = () => {
   const [read, setRead] = useState([]);
   const [wishlist, setWishlist] = useState([]);
+  const { setReadBooks } = useContext(ReadBooksContext);
 
   const handleSorting = (str) => {
     switch (str) {
@@ -35,7 +37,8 @@ const ListedBooks = () => {
 
   const handleRemove = (obj, bool) => {
     const remainData = removeStorage(obj, bool);
-    bool ? setWishlist(remainData) : setRead(remainData);
+    bool ? setWishlist(remainData) : setRead(remainData),
+      setReadBooks(remainData);
   };
 
   useEffect(() => {
