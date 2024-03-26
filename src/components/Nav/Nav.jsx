@@ -15,7 +15,7 @@ function NavList() {
         as="li"
         variant="lead"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700"
+        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/"
@@ -34,7 +34,7 @@ function NavList() {
         as="li"
         variant="lead"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700"
+        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/listedBooks"
@@ -53,7 +53,7 @@ function NavList() {
         as="li"
         variant="lead"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700"
+        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/pagesToRead"

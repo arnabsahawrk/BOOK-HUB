@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { JSONdataContext } from "../layouts/Root";
 import { BounceLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
+import { setStorage } from "../utils/localStorage";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -19,6 +20,13 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = thisBook || {};
+
+  const handleBook = () => {
+    setStorage(thisBook);
+  };
+  const handleWishList = () => {
+    setStorage(thisBook, true);
+  };
 
   return (
     <section className="flex flex-col items-center">
@@ -75,12 +83,14 @@ const BookDetails = () => {
           </ul>
           <div className="flex items-center gap-4 flex-wrap">
             <button
+              onClick={handleBook}
               rel="noopener noreferrer"
               className="px-4 py-2 md:px-6 md:py-3 font-semibold text-sm md:text-base rounded-lg bg-yellow-700 text-white"
             >
               Read
             </button>
             <button
+              onClick={handleWishList}
               rel="noopener noreferrer"
               className="px-4 py-2 md:px-6 md:py-3 font-semibold text-sm md:text-base rounded-lg bg-blue-900 text-white"
             >
