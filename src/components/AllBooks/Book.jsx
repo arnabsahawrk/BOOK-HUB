@@ -8,9 +8,9 @@ const Book = ({ book }) => {
   return (
     <Link to={`/bookDetails/${bookId}`}>
       <div className="p-6 border border-blue-300 rounded-2xl space-y-6 shadow-sm">
-        <div className="p-6 bg-gray-100 rounded-2xl">
+        <div className="p-6 bg-gray-100 rounded-2xl flex justify-center items-center">
           <img
-            className="object-cover h-[200px] mx-auto shadow-xl hover:shadow-inner rounded-lg"
+            className="object-cover h-[200px] shadow-xl hover:shadow-inner rounded-lg"
             src={image}
             alt={bookName}
           />

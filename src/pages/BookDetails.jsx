@@ -38,15 +38,15 @@ const BookDetails = () => {
         data-testid="loader"
       />
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 w-full">
-        <div className="p-6 bg-gray-100 rounded-2xl">
+        <div className="p-6 bg-gray-100 rounded-2xl flex justify-center items-center">
           <img
-            className="object-cover max-h-[400px] md:max-h-[564px]  mx-auto rounded-lg"
+            className="object-cover max-h-[400px] md:max-h-[564px] rounded-lg"
             src={image}
             alt={bookName}
           />
         </div>
         <div className="flex-1 space-y-6">
-          <article className="space-y-3 border-b border-gray-300 py-4">
+          <article className="space-y-3 border-b border-gray-300 pb-4">
             <h2 className="text-2xl md:text-4xl font-bold text-blue-900">
               {bookName}
             </h2>

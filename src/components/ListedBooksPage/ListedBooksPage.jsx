@@ -9,8 +9,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AllListedBooks from "./AllListedBooks";
+import { useContext } from "react";
+import { ListedBooksContext } from "../../pages/ListedBooks";
 
 const ListedBooksPage = () => {
+  const [read, wishlist] = useContext(ListedBooksContext);
   return (
     <section className="space-y-6 md:space-y-8">
       <h1 className="text-2xl md:text-3xl text-blue-900 font-bold text-center py-6 rounded-lg bg-gray-100 shadow-sm">
@@ -32,16 +35,16 @@ const ListedBooksPage = () => {
       </div>
       <div>
         <Tabs>
-          <TabList>
+          <TabList className="border-[#9CCEF8] border-b">
             <Tab style={{ color: "#0D47A1" }}>Read Books</Tab>
             <Tab style={{ color: "#0D47A1" }}>Wishlist Books</Tab>
           </TabList>
 
           <TabPanel>
-            <AllListedBooks props="read" />
+            <AllListedBooks saved={read} />
           </TabPanel>
           <TabPanel>
-            <AllListedBooks props="wishlist" />
+            <AllListedBooks saved={wishlist} />
           </TabPanel>
         </Tabs>
       </div>
