@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   return (
     <section className="bg-gray-100 text-blue-900 rounded-lg">
@@ -7,9 +9,11 @@ const Banner = () => {
             Discover Your Next Literary Adventure
           </h1>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <button className="px-4 py-2 md:px-6 md:py-3 font-semibold text-sm md:text-base rounded-lg bg-yellow-700 text-white">
-              View The List
-            </button>
+            <Link to="/listedBooks">
+              <button className="px-4 py-2 md:px-6 md:py-3 font-semibold text-sm md:text-base rounded-lg bg-yellow-700 text-white">
+                View The List
+              </button>
+            </Link>
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

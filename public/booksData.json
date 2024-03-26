@@ -115,5 +115,44 @@
     "tags": ["Epic", "High Fantasy"],
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1954
+  },
+  {
+    "bookId": 10,
+    "bookName": "You Can Win",
+    "author": "Shiv Khera",
+    "image": "https://i.postimg.cc/vBB9qRWp/You-Can-Win.jpg",
+    "review": "Shiv Khera's 'You Can Win' is a motivational book that empowers readers to achieve success and fulfillment in their personal and professional lives. Through inspiring anecdotes and practical advice, Khera outlines key principles for success, emphasizing the importance of positive thinking, goal setting, and perseverance. 'You Can Win' serves as a guidebook for unlocking one's full potential and realizing dreams.",
+    "totalPages": 308,
+    "rating": 4.4,
+    "category": "Self-Help",
+    "tags": ["Motivation", "Success"],
+    "publisher": "Bloomsbury India",
+    "yearOfPublishing": 1998
+  },
+  {
+    "bookId": 11,
+    "bookName": "Atomic Habits",
+    "author": "James Clear",
+    "image": "https://i.postimg.cc/02BwQH1f/Atomic-Habits.jpg",
+    "review": "James Clear's 'Atomic Habits' is a groundbreaking guide to building good habits and breaking bad ones. Drawing on scientific research and real-life examples, Clear reveals practical strategies for creating lasting change and achieving remarkable results. From small, incremental changes to the power of habit stacking, this book provides actionable insights that can transform your life. Whether you want to improve your health, productivity, or relationships, 'Atomic Habits' offers a roadmap to success.",
+    "totalPages": 320,
+    "rating": 4.8,
+    "category": "Self-Help",
+    "tags": ["Habits", "Personal Development"],
+    "publisher": "Avery",
+    "yearOfPublishing": 2018
+  },
+  {
+    "bookId": 12,
+    "bookName": "The Fault in Our Stars",
+    "author": "John Green",
+    "image": "https://i.postimg.cc/766Zz07k/The-Fault-in-Our-Stars.jpg",
+    "review": "John Green's 'The Fault in Our Stars' is a heart-wrenching and poignant novel that explores the complexities of love and loss. The story follows Hazel Grace Lancaster, a sixteen-year-old cancer patient, who meets and falls in love with Augustus Waters, a fellow cancer survivor, at a support group. Together, they navigate the challenges of illness, mortality, and the search for meaning in their limited time together. 'The Fault in Our Stars' is a beautifully written and emotionally resonant story that will stay with readers long after they've turned the final page.",
+    "totalPages": 313,
+    "rating": 4.5,
+    "category": "Young Adult",
+    "tags": ["Romance", "Contemporary"],
+    "publisher": "Dutton Books",
+    "yearOfPublishing": 2012
   }
 ]

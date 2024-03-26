@@ -105,7 +105,7 @@ const Nav = () => {
       <div className="flex items-center justify-between">
         <Typography
           as="h1"
-          className="mr-4 cursor-pointer py-1.5 text-blue-900 text-xl md:text-3xl font-semibold"
+          className="mr-4 cursor-pointer py-1.5 text-blue-900 text-xl md:text-3xl font-extrabold"
         >
           BOOK HUB
         </Typography>
