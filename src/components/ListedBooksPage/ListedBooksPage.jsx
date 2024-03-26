@@ -13,7 +13,7 @@ import { useContext } from "react";
 import { ListedBooksContext } from "../../pages/ListedBooks";
 
 const ListedBooksPage = () => {
-  const [read, wishlist] = useContext(ListedBooksContext);
+  const [read, wishlist, sorting] = useContext(ListedBooksContext);
   return (
     <section className="space-y-6 md:space-y-8">
       <h1 className="text-2xl md:text-3xl text-blue-900 font-bold text-center py-6 rounded-lg bg-gray-100 shadow-sm">
@@ -27,9 +27,11 @@ const ListedBooksPage = () => {
             </Button>
           </MenuHandler>
           <MenuList className="bg-gray-100 text-blue-900">
-            <MenuItem>Rating</MenuItem>
-            <MenuItem>Number Of Pages</MenuItem>
-            <MenuItem>Published Year</MenuItem>
+            <MenuItem onClick={() => sorting("rating")}>Rating</MenuItem>
+            <MenuItem onClick={() => sorting("pages")}>
+              Number Of Pages
+            </MenuItem>
+            <MenuItem onClick={() => sorting("year")}>Published Year</MenuItem>
           </MenuList>
         </Menu>
       </div>
