@@ -6,7 +6,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function NavList() {
   return (
@@ -103,12 +103,14 @@ const Nav = () => {
   return (
     <Navbar className="shadow-none mx-auto bg-gray-200 border-none">
       <div className="flex items-center justify-between">
-        <Typography
-          as="h1"
-          className="mr-4 cursor-pointer py-1.5 text-blue-900 text-xl md:text-3xl font-extrabold"
-        >
-          BOOK HUB
-        </Typography>
+        <Link to="/">
+          <Typography
+            as="h1"
+            className="mr-4 cursor-pointer py-1.5 text-blue-900 text-xl md:text-3xl font-extrabold"
+          >
+            BOOK HUB
+          </Typography>
+        </Link>
         <div className="hidden lg:block">
           <NavList />
         </div>
