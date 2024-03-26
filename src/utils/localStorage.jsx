@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+
 const getStorage = (wishList) => {
   if (wishList) {
     return JSON.parse(window.localStorage.getItem("wishList")) || [];
@@ -40,8 +41,32 @@ const saveStorage = (obj, wishList) => {
   }
 };
 
-const setStorage = (obj = {}, wishList = false) => {
+const removeStorage = (obj, wishList = false) => {
+  const storedData = getStorage(wishList);
+
+  const remainData = storedData.filter((book) => book.bookId !== obj.bookId);
+
+  if (wishList) {
+    window.localStorage.setItem("wishList", JSON.stringify(remainData));
+  } else {
+    window.localStorage.setItem("read", JSON.stringify(remainData));
+  }
+  toast.success("The book successfully removed from your list.", {
+    style: {
+      border: "1px solid #713200",
+      padding: "16px",
+      color: "#713200",
+    },
+    iconTheme: {
+      primary: "#713200",
+      secondary: "#FFFAEE",
+    },
+  });
+  return remainData;
+};
+
+const setStorage = (obj, wishList = false) => {
   saveStorage(obj, wishList);
 };
 
-export { setStorage, getStorage };
+export { setStorage, getStorage, removeStorage };

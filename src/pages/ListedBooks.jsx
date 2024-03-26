@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import ListedBooksPage from "../components/ListedBooksPage/ListedBooksPage";
-import { getStorage } from "../utils/localStorage";
+import { getStorage, removeStorage } from "../utils/localStorage";
 
 export const ListedBooksContext = createContext([]);
 
@@ -33,6 +33,11 @@ const ListedBooks = () => {
     }
   };
 
+  const handleRemove = (obj, bool) => {
+    const remainData = removeStorage(obj, bool);
+    bool ? setWishlist(remainData) : setRead(remainData);
+  };
+
   useEffect(() => {
     const readBooks = getStorage();
     const wishlistBooks = getStorage(true);
@@ -42,7 +47,9 @@ const ListedBooks = () => {
   }, []);
 
   return (
-    <ListedBooksContext.Provider value={[read, wishlist, handleSorting]}>
+    <ListedBooksContext.Provider
+      value={{ read, wishlist, handleSorting, handleRemove }}
+    >
       <section className="space-y-10 md:space-y-20">
         <ListedBooksPage />
       </section>

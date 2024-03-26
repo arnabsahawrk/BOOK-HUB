@@ -3,8 +3,12 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsPeople } from "react-icons/bs";
 import { LuFileBarChart } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { MdOutlineDeleteForever } from "react-icons/md";
+import { useContext } from "react";
+import { ListedBooksContext } from "../../pages/ListedBooks";
 
-const ListedBook = ({ book }) => {
+const ListedBook = ({ book, whichOne }) => {
+  const { handleRemove } = useContext(ListedBooksContext);
   const {
     bookId,
     bookName,
@@ -18,7 +22,7 @@ const ListedBook = ({ book }) => {
     yearOfPublishing,
   } = book || {};
   return (
-    <div className="p-6 flex flex-col md:flex-row gap-6 border border-blue-300 rounded-2xl space-y-6 shadow-sm">
+    <div className="p-6 flex flex-col md:flex-row gap-6 border border-blue-300 rounded-2xl space-y-6 shadow-sm relative">
       <div className="p-6 bg-gray-100 rounded-2xl flex justify-center items-center">
         <img
           className="object-cover max-h-[200px] shadow-xl hover:shadow-inner rounded-lg"
@@ -70,12 +74,19 @@ const ListedBook = ({ book }) => {
           </li>
         </ul>
       </div>
+      <button
+        onClick={() => handleRemove(book, whichOne)}
+        className="absolute top-0 right-0 translate-x-3 md:translate-x-5 -translate-y-10 bg-red-200 text-red-900 p-3 rounded-full text-3xl"
+      >
+        <MdOutlineDeleteForever />
+      </button>
     </div>
   );
 };
 
 ListedBook.propTypes = {
   book: PropTypes.object.isRequired,
+  whichOne: PropTypes.bool.isRequired,
 };
 
 export default ListedBook;
