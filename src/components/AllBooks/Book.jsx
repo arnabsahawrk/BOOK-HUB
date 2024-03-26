@@ -7,7 +7,7 @@ const Book = ({ book }) => {
     book || {};
   return (
     <Link to={`/bookDetails/${bookId}`}>
-      <div className="p-6 border border-[#131313CC] rounded-2xl space-y-6">
+      <div className="p-6 border border-blue-300 rounded-2xl space-y-6 shadow-sm">
         <div className="p-6 bg-gray-100 rounded-2xl">
           <img
             className="object-cover h-[200px] mx-auto shadow-xl hover:shadow-inner rounded-lg"

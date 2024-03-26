@@ -44,4 +44,4 @@ const setStorage = (obj = {}, wishList = false) => {
   saveStorage(obj, wishList);
 };
 
-export { setStorage };
+export { setStorage, getStorage };
