@@ -3,6 +3,7 @@ import Book from "../components/AllBooks/Book";
 import { useContext, useState } from "react";
 import { JSONdataContext } from "../layouts/Root";
 import { Input, Button } from "@material-tailwind/react";
+import NoBooks from "../components/NoBooks/NoBooks";
 
 const SearchBooks = () => {
   const [allBooks, loading] = useContext(JSONdataContext);
@@ -57,9 +58,11 @@ const SearchBooks = () => {
           data-testid="loader"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-stretch w-full">
-          {books.map((book) => (
-            <Book key={book.bookId} book={book} />
-          ))}
+          {books.length ? (
+            books.map((book) => <Book key={book.bookId} book={book} />)
+          ) : (
+            <NoBooks />
+          )}
         </div>
       </div>
     </section>
