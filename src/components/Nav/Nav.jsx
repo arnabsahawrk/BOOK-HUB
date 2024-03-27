@@ -13,9 +13,9 @@ function NavList() {
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-4">
       <Typography
         as="li"
-        variant="lead"
+        variant="paragraph"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
+        className="p-1 font-bold hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/"
@@ -32,9 +32,9 @@ function NavList() {
       </Typography>
       <Typography
         as="li"
-        variant="lead"
+        variant="paragraph"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
+        className="p-1 font-bold hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/listedBooks"
@@ -51,9 +51,9 @@ function NavList() {
       </Typography>
       <Typography
         as="li"
-        variant="lead"
+        variant="paragraph"
         color="blue-gray"
-        className="p-1 font-medium hover:text-yellow-700 text-blue-900"
+        className="p-1 font-bold hover:text-yellow-700 text-blue-900"
       >
         <NavLink
           to="/pagesToRead"
@@ -66,6 +66,25 @@ function NavList() {
           }
         >
           Pages to Read
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="paragraph"
+        color="blue-gray"
+        className="p-1 font-bold hover:text-yellow-700 text-blue-900"
+      >
+        <NavLink
+          to="/joinHub"
+          className={({ isActive, isPending }) =>
+            `${
+              isActive
+                ? "text-yellow-700 bg-gray-100 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
+                : ""
+            } ${isPending ? "text-red-700" : ""}`
+          }
+        >
+          Join Hub
         </NavLink>
       </Typography>
       <div className="lg:hidden flex items-center gap-4 flex-wrap">

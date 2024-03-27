@@ -69,4 +69,19 @@ const setStorage = (obj, wishList = false) => {
   saveStorage(obj, wishList);
 };
 
-export { setStorage, getStorage, removeStorage };
+//Form Submission
+const getUserDataStorage = () => {
+  return JSON.parse(window.localStorage.getItem("userData")) || {};
+};
+const setUserDataStorage = (data) => {
+  window.localStorage.setItem("userData", JSON.stringify(data));
+  toast.success("Your Submission Done Successfully.");
+};
+
+export {
+  setStorage,
+  getStorage,
+  removeStorage,
+  getUserDataStorage,
+  setUserDataStorage,
+};

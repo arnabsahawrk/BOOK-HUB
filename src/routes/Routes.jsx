@@ -5,6 +5,7 @@ import ListedBooks from "../pages/ListedBooks";
 import PagesToRead from "../pages/PagesToRead";
 import ErrorPage from "../pages/ErrorPage";
 import BookDetails from "../pages/BookDetails";
+import JoinWithHub from "../pages/JoinWithHub";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path: "/bookDetails/:bookId",
         element: <BookDetails />,
+      },
+      {
+        path: "/joinHub",
+        element: <JoinWithHub />,
       },
     ],
   },

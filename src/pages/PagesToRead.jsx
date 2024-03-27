@@ -11,7 +11,7 @@ const PagesToRead = () => {
     setReadBooks(storedData);
   }, [setReadBooks]);
   return (
-    <section className="h-[400px] md:h-[600px] bg-gray-100 text-blue-900 rounded-lg shadow-sm">
+    <section className="h-[400px] md:h-[600px] bg-gray-100 text-blue-900 rounded-lg shadow-sm overflow-x-auto flex items-center justify-center">
       <Chart />
     </section>
   );
