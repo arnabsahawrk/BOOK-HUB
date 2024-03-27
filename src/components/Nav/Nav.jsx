@@ -75,6 +75,25 @@ function NavList() {
         className="p-1 font-bold hover:text-yellow-700 text-blue-900"
       >
         <NavLink
+          to="/searchBooks"
+          className={({ isActive, isPending }) =>
+            `${
+              isActive
+                ? "text-yellow-700 bg-gray-100 border border-yellow-700 px-2 md:px-3 py-1 md:py-2 rounded-lg hover:text-white hover:bg-yellow-700"
+                : ""
+            } ${isPending ? "text-red-700" : ""}`
+          }
+        >
+          Search Books
+        </NavLink>
+      </Typography>
+      <Typography
+        as="li"
+        variant="paragraph"
+        color="blue-gray"
+        className="p-1 font-bold hover:text-yellow-700 text-blue-900"
+      >
+        <NavLink
           to="/joinHub"
           className={({ isActive, isPending }) =>
             `${
