@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import ListedBooksPage from "../components/ListedBooksPage/ListedBooksPage";
 import { getStorage, removeStorage } from "../utils/localStorage";
 import { ReadBooksContext } from "../layouts/Root";
+import { Helmet } from "react-helmet-async";
 
 export const ListedBooksContext = createContext([]);
 
@@ -54,6 +55,9 @@ const ListedBooks = () => {
       value={{ read, wishlist, handleSorting, handleRemove }}
     >
       <section className="space-y-10 md:space-y-20">
+        <Helmet>
+          <title>Listed Books</title>
+        </Helmet>
         <ListedBooksPage />
       </section>
     </ListedBooksContext.Provider>

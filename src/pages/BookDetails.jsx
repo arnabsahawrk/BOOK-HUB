@@ -3,6 +3,7 @@ import { JSONdataContext } from "../layouts/Root";
 import { BounceLoader } from "react-spinners";
 import { useParams } from "react-router-dom";
 import { setStorage } from "../utils/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -30,6 +31,9 @@ const BookDetails = () => {
 
   return (
     <section className="flex flex-col items-center">
+      <Helmet>
+        <title>Book Details</title>
+      </Helmet>
       <BounceLoader
         color="#FBC02D"
         loading={loading}

@@ -1,16 +1,20 @@
 import { BounceLoader } from "react-spinners";
 import Book from "../components/AllBooks/Book";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { JSONdataContext } from "../layouts/Root";
 import { Input, Button } from "@material-tailwind/react";
 import NoBooks from "../components/NoBooks/NoBooks";
+import { Helmet } from "react-helmet-async";
 
 const SearchBooks = () => {
   const [allBooks, loading] = useContext(JSONdataContext);
-  const [books, setBooks] = useState(allBooks);
+  const [books, setBooks] = useState([]);
   const [search, setSearch] = useState("");
   const onChange = ({ target }) => setSearch(target.value);
 
+  useEffect(() => {
+    setBooks(allBooks);
+  }, [allBooks]);
   const handleSearch = () => {
     const found = allBooks.filter((book) =>
       book.category.toLowerCase().includes(search.trim().toLocaleLowerCase())
@@ -21,6 +25,9 @@ const SearchBooks = () => {
 
   return (
     <section className="space-y-9">
+      <Helmet>
+        <title>Search Books</title>
+      </Helmet>
       <div className="text-center py-6 rounded-lg bg-gray-100 shadow-sm space-y-4">
         <h1 className="text-2xl md:text-3xl text-blue-900 font-bold">
           Search Books
